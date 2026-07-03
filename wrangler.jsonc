@@ -2,7 +2,9 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "castrotranslations-net",
   "compatibility_date": "2026-07-03",
-  "main": "_worker.js",
+  "observability": {
+    "enabled": false
+  },
   "assets": {
     "directory": ".",
     "not_found_handling": "404-page"
