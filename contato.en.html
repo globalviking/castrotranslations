@@ -67,41 +67,6 @@
       </div>
     </div>
 
-    <form action="/api/contact" method="post">
-      <h2>Contact form</h2>
-      <p class="form-note">Send your message directly. We'll receive it by email.</p>
-
-      <div id="form-success" class="form-success" style="display:none">
-        <p>✓ Message sent successfully! We'll get back to you shortly.</p>
-      </div>
-
-      <label for="nome">Full name</label>
-      <input type="text" id="nome" name="nome" required placeholder="Your name">
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required placeholder="your@email.com">
-
-      <label for="assunto">Subject</label>
-      <input type="text" id="assunto" name="assunto" placeholder="Translation / Interpretation / Lessons">
-
-      <label for="mensagem">Message</label>
-      <textarea id="mensagem" name="mensagem" required placeholder="Describe your needs..."></textarea>
-
-      <label class="consent">
-        <input type="checkbox" required>
-        <span>I agree to the processing of my data for the purpose of responding to this contact, as per the <a href="/privacidade.en.html">Privacy Policy</a>.</span>
-      </label>
-
-      <button type="submit">Send message</button>
-    </form>
-
-    <script>
-    // Show success message if redirected after form submission
-    if (window.location.search.indexOf('enviado=ok') !== -1) {
-      document.getElementById('form-success').style.display = 'block';
-      window.history.replaceState({}, '', window.location.pathname);
-    }
-    </script>
   </main>
 
   <footer>
