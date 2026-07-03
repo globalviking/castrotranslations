@@ -25,7 +25,7 @@
     <div class="header-inner">
       <div class="logo">
         <a href="/index.html"><img src="/assets/img/logo.svg" alt="Logo PC — Patricia Castro" width="36" height="36"></a>
-        <a href="/index.html">Patricia Castro</a>
+        <a href="/index.html">Patricia de Paiva e Castro</a>
       </div>
       <nav aria-label="Navegação principal">
         <ul>
@@ -67,9 +67,13 @@
       </div>
     </div>
 
-    <form action="mailto:patricia@castrotranslations.net" method="post" enctype="text/plain">
+    <form action="/api/contact" method="post">
       <h2>Formulário de contato</h2>
-      <p class="form-note">Ao enviar, seu cliente de e-mail será aberto com a mensagem preformatada. Alternativamente, use os canais acima.</p>
+      <p class="form-note">Envie sua mensagem diretamente. Receberemos por e-mail.</p>
+
+      <div id="form-success" class="form-success" style="display:none">
+        <p>✓ Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+      </div>
 
       <label for="nome">Nome completo</label>
       <input type="text" id="nome" name="nome" required placeholder="Seu nome">
@@ -90,6 +94,15 @@
 
       <button type="submit">Enviar mensagem</button>
     </form>
+
+    <script>
+    // Show success message if redirected after form submission
+    if (window.location.search.indexOf('enviado=ok') !== -1) {
+      document.getElementById('form-success').style.display = 'block';
+      // Remove the query param from URL without reloading
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+    </script>
   </main>
 
   <footer>
@@ -104,7 +117,7 @@
     <p>
       <strong>Patricia de Paiva e Castro</strong><br>
       <span class="footer-legal">
-        PATRICIA DE PAIVA E CASTRO — CNPJ 35.555.848/0001-61<br>
+        PATRICIA DE PAIVA E CASTRO — CNPJ 35.555.848/0001-61 — Psicóloga<br>
         R. Luis Cruls, 309, Conj 03 — Jardim Itacolomi — São Paulo/SP — CEP 04.386-110 — Brasil<br>
         patricia@castrotranslations.net · +55 (11) 3079-1910
       </span>

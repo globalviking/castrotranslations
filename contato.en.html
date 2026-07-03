@@ -25,7 +25,7 @@
     <div class="header-inner">
       <div class="logo">
         <a href="/index.en.html"><img src="/assets/img/logo.svg" alt="Logo PC — Patricia Castro" width="36" height="36"></a>
-        <a href="/index.en.html">Patricia Castro</a>
+        <a href="/index.en.html">Patricia de Paiva e Castro</a>
       </div>
       <nav aria-label="Main navigation">
         <ul>
@@ -67,29 +67,41 @@
       </div>
     </div>
 
-    <form action="mailto:patricia@castrotranslations.net" method="post" enctype="text/plain">
+    <form action="/api/contact" method="post">
       <h2>Contact form</h2>
-      <p class="form-note">Submitting the form will open your email client with a pre-formatted message. Alternatively, use the channels above.</p>
+      <p class="form-note">Send your message directly. We'll receive it by email.</p>
 
-      <label for="name">Full name</label>
-      <input type="text" id="name" name="name" required placeholder="Your name">
+      <div id="form-success" class="form-success" style="display:none">
+        <p>✓ Message sent successfully! We'll get back to you shortly.</p>
+      </div>
+
+      <label for="nome">Full name</label>
+      <input type="text" id="nome" name="nome" required placeholder="Your name">
 
       <label for="email">Email</label>
       <input type="email" id="email" name="email" required placeholder="your@email.com">
 
-      <label for="subject">Subject</label>
-      <input type="text" id="subject" name="subject" placeholder="Translation / Interpretation / Lessons">
+      <label for="assunto">Subject</label>
+      <input type="text" id="assunto" name="assunto" placeholder="Translation / Interpretation / Lessons">
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" required placeholder="Describe your needs..."></textarea>
+      <label for="mensagem">Message</label>
+      <textarea id="mensagem" name="mensagem" required placeholder="Describe your needs..."></textarea>
 
       <label class="consent">
         <input type="checkbox" required>
-        <span>I agree to the processing of my data for responding to this contact, as described in the <a href="/privacidade.en.html">Privacy Policy</a>.</span>
+        <span>I agree to the processing of my data for the purpose of responding to this contact, as per the <a href="/privacidade.en.html">Privacy Policy</a>.</span>
       </label>
 
       <button type="submit">Send message</button>
     </form>
+
+    <script>
+    // Show success message if redirected after form submission
+    if (window.location.search.indexOf('enviado=ok') !== -1) {
+      document.getElementById('form-success').style.display = 'block';
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+    </script>
   </main>
 
   <footer>
@@ -104,7 +116,7 @@
     <p>
       <strong>Patricia de Paiva e Castro</strong><br>
       <span class="footer-legal">
-        PATRICIA DE PAIVA E CASTRO — CNPJ 35.555.848/0001-61<br>
+        PATRICIA DE PAIVA E CASTRO — CNPJ 35.555.848/0001-61 — Psicóloga<br>
         R. Luis Cruls, 309, Conj 03 — Jardim Itacolomi — São Paulo/SP — CEP 04.386-110 — Brazil<br>
         patricia@castrotranslations.net · +55 (11) 3079-1910
       </span>
