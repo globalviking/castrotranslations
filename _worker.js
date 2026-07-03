@@ -3,7 +3,6 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Handle contact form POST
     if (request.method === 'POST' && url.pathname === '/api/contact') {
       try {
         const formData = await request.formData();
@@ -12,7 +11,7 @@ export default {
         const assunto = formData.get('assunto') || '';
         const mensagem = formData.get('mensagem') || '';
 
-        const body = `Nome: ${nome}\nE-mail: ${email}\nAssunto: ${assunto}\n\nMensagem:\n${mensagem}`;
+        const body = `Nome: ${nome}\nE-mail do remetente: ${email}\nAssunto: ${assunto}\n\nMensagem:\n${mensagem}`;
 
         const sendRequest = new Request('https://api.mailchannels.net/tx/v1/send', {
           method: 'POST',
@@ -21,7 +20,7 @@ export default {
             personalizations: [{
               to: [{ email: 'patricia@castrotranslations.net', name: 'Patricia de Paiva e Castro' }]
             }],
-            from: { email: 'contato@castrotranslations.net', name: nome },
+            from: { email: 'patricia@castrotranslations.net', name: nome },
             subject: `[Site] ${assunto || 'Contato via site'}`,
             content: [{ type: 'text/plain', value: body }]
           })
@@ -46,7 +45,6 @@ export default {
       }
     }
 
-    // Pass through to static assets
     return env.ASSETS.fetch(request);
   }
 };
