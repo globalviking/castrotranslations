@@ -1,0 +1,121 @@
+/* Castro Translations — Patricia de Paiva e Castro
+   Paleta: off-white #F8F5EF, grafite #1F2933, verde-sálvia #6B8E7F, cinza #E5E0D8 */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#F8F5EF;
+  --text:#1F2933;
+  --accent:#6B8E7F;
+  --border:#E5E0D8;
+  --white:#fff;
+  --radius:8px;
+  --max-w:900px;
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+}
+
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;font-size:1.05rem}
+
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Skip link */
+.skip{position:absolute;left:-999px;top:0;z-index:100}
+.skip:focus{left:0;background:var(--accent);color:#fff;padding:.5rem 1rem;border-radius:0 0 var(--radius) 0}
+
+/* Header */
+header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50}
+.header-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;flex-wrap:wrap;gap:.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.1rem;color:var(--text)}
+.logo svg{width:36px;height:36px}
+.logo a{color:inherit;text-decoration:none}
+.logo a:hover{text-decoration:none}
+
+/* Nav */
+nav ul{display:flex;gap:1.2rem;list-style:none;flex-wrap:wrap}
+nav a{color:var(--text);font-size:.95rem;font-weight:500}
+nav a:hover{color:var(--accent);text-decoration:none}
+
+/* Lang switcher */
+.lang-switch{display:flex;gap:.3rem;align-items:center}
+.lang-switch a{padding:.2rem .5rem;border-radius:4px;font-size:.85rem;font-weight:600}
+.lang-switch a.active{background:var(--accent);color:#fff}
+.lang-switch a:not(.active){color:var(--text)}
+
+/* Main */
+main{max-width:var(--max-w);margin:0 auto;padding:2rem 1.25rem 3rem}
+
+/* Hero */
+.hero{text-align:center;padding:3rem 0 2.5rem}
+.hero h1{font-size:1.8rem;font-weight:800;line-height:1.2;margin-bottom:.6rem}
+.hero p{font-size:1.1rem;color:#555;max-width:600px;margin:0 auto}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin:2rem 0}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem}
+.card h3{color:var(--accent);margin-bottom:.5rem;font-size:1.15rem}
+.card p{font-size:.95rem;color:#444}
+
+/* CTA */
+.cta{display:inline-block;background:var(--accent);color:#fff;padding:.7rem 1.6rem;border-radius:var(--radius);font-weight:600;margin:1.5rem 0;transition:opacity .2s}
+.cta:hover{opacity:.88;text-decoration:none;color:#fff}
+
+/* Sections */
+section{margin:2.5rem 0}
+h2{font-size:1.4rem;margin-bottom:1rem;color:var(--text)}
+h3{font-size:1.15rem;margin-bottom:.6rem;color:var(--accent)}
+
+/* Service */
+.service{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:1.5rem}
+.service h3{color:var(--text);font-size:1.2rem;margin-bottom:.4rem}
+.service .meta{font-size:.8rem;color:var(--accent);font-weight:600;margin-bottom:.6rem}
+.service p{margin-bottom:.6rem}
+.service ul{margin-left:1.2rem;margin-top:.5rem}
+.service li{margin-bottom:.3rem}
+
+/* About */
+.about-photo{width:140px;height:140px;border-radius:50%;border:3px solid var(--border);object-fit:cover;display:block;margin:0 auto 1.5rem}
+.about-section ul{margin-left:1.2rem;margin-bottom:1rem}
+.about-section li{margin-bottom:.3rem}
+.badge{display:inline-block;background:var(--accent);color:#fff;padding:.2rem .7rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.2rem .3rem .2rem 0}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1rem 0}
+.contact-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1rem}
+.contact-item h3{font-size:.9rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.3rem}
+.contact-item p,.contact-item a{font-size:.95rem;color:var(--text);word-break:break-word}
+.whatsapp-btn{display:inline-block;background:#25D366;color:#fff;padding:.6rem 1.2rem;border-radius:var(--radius);font-weight:600;margin-top:.5rem}
+.whatsapp-btn:hover{opacity:.9;text-decoration:none;color:#fff}
+
+/* Form */
+form{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-top:1.5rem}
+form label{display:block;font-weight:600;margin-bottom:.3rem;font-size:.9rem}
+form input,form textarea{width:100%;padding:.6rem;border:1px solid var(--border);border-radius:4px;font-family:inherit;font-size:.95rem;margin-bottom:.8rem;background:var(--bg)}
+form textarea{min-height:120px;resize:vertical}
+form .consent{display:flex;gap:.5rem;align-items:flex-start;font-size:.85rem;color:#555}
+form .consent input{width:auto;margin-top:.2rem}
+form button{background:var(--accent);color:#fff;border:none;padding:.7rem 1.6rem;border-radius:var(--radius);font-weight:600;font-size:1rem;cursor:pointer}
+form button:hover{opacity:.88}
+
+/* Policies */
+.policy{margin-bottom:2rem}
+.policy h2{border-bottom:2px solid var(--border);padding-bottom:.5rem}
+.policy p{margin-bottom:.6rem}
+.policy ul{margin:.5rem 0 .6rem 1.2rem}
+.policy li{margin-bottom:.3rem}
+
+/* Footer */
+footer{background:var(--text);color:#ccc;text-align:center;padding:2rem 1rem;margin-top:3rem;font-size:.85rem}
+footer a{color:var(--accent)}
+.footer-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:.8rem}
+.footer-links a{color:#ccc;font-size:.85rem}
+.footer-legal{font-size:.78rem;color:#999;line-height:1.5}
+.footer-legal strong{color:#bbb}
+
+/* Responsive */
+@media(max-width:600px){
+  .hero h1{font-size:1.4rem}
+  nav ul{gap:.8rem}
+  .header-inner{flex-direction:column;align-items:flex-start}
+}
